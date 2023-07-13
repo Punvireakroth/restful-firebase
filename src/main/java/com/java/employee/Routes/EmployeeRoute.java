@@ -1,13 +1,9 @@
 package com.java.employee.Routes;
 
-import com.google.api.Documentation;
 import com.google.api.core.ApiFuture;
-import com.google.cloud.firestore.DocumentReference;
-import com.google.cloud.firestore.DocumentSnapshot;
-import com.google.cloud.firestore.WriteResult;
+import com.google.cloud.firestore.*;
 import com.google.firebase.cloud.FirestoreClient;
 import com.java.employee.Model.EmployeeModel;
-import com.google.cloud.firestore.Firestore;
 import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
@@ -34,6 +30,8 @@ public class EmployeeRoute {
         }
         return null;
     }
+
+
     public String updateEmployee(EmployeeModel employeeModel) throws ExecutionException, InterruptedException {
         Firestore dbFirestore = FirestoreClient.getFirestore();
         Map<String, Object> updates = new HashMap<>();
